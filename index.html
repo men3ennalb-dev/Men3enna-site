@@ -41,6 +41,14 @@ nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between
 .row{display:flex;flex-wrap:wrap;gap:12px}
 .why-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#E8B94A;color:#1A1206;font-weight:800;font-size:17px;padding:10px 20px;border-radius:999px;min-height:46px}
 .why-link:hover{background:#F2C960}
+.qr-box{background:#17121B;border:1px solid #33293A;border-radius:28px;padding:36px;display:flex;flex-wrap:wrap;gap:36px;align-items:center}
+.qr-text{flex:1 1 340px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.qr-text h2{margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:900;line-height:1.35}
+.qr-text p{margin:0;color:#C9C0D0;font-size:18px}
+.qr-list{flex:1 1 400px;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.qr-list li{background:#0E0B10;border:1px solid #33293A;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column}
+.qr-list strong{color:#E8B94A;font-size:18px}
+.qr-list span{color:#C9C0D0;font-size:15px}
 .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .reason{background:#17121B;border:1px solid #33293A;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px}
 .reason .ico{width:50px;height:50px;border-radius:14px;background:#2A1020;color:#FF8CC0;display:flex;align-items:center;justify-content:center}
@@ -110,6 +118,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <a class="brand" href="#top"><img src="logo-small.jpg" alt="شعار من عنا ديجيتال">من عنا ديجيتال</a>
 <div class="links">
 <a href="#packages">الباقات</a>
+<a href="#qr">QR كود</a>
 <a href="#demo">جرّب الحجز</a>
 <a href="#how">كيف منشتغل</a>
 <a class="btn btn-gold nav-cta" href="https://wa.me/96170073262">احكينا واتساب</a>
@@ -191,6 +200,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 </article>
 </div>
 <p class="quote">بدك موقع شركة أكبر أو متجر أونلاين؟ <a href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20%D8%B3%D8%B9%D8%B1">اطلب عرض سعر</a></p>
+</section>
+
+<section class="block" id="qr" style="padding-top:0">
+<div class="qr-box">
+<div class="qr-text">
+<span class="pill">خدمة جديدة</span>
+<h2>QR كود لمصلحتك، بموقع أو بلا موقع</h2>
+<p>منعملّك QR كود جاهز للطباعة، بتحطّو عالطاولة، عالواجهة، عالكرت أو عالمنيو. الزبون بيصوّرو بكاميرا التلفون وبيوصل لعندك بثانية.</p>
+<a class="btn btn-gold" href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20QR%20%D9%83%D9%88%D8%AF%20%D9%84%D9%85%D8%B5%D9%84%D8%AD%D8%AA%D9%8A">اطلب QR لمحلك</a>
+</div>
+<ul class="qr-list">
+<li><strong>موقعك</strong><span>بيفتح الموقع، صفحة الحجز أو المنيو</span></li>
+<li><strong>واتساب</strong><span>بيفتح محادثة معك مباشرة</span></li>
+<li><strong>الخريطة</strong><span>بيوصّل الزبون لعند المحل</span></li>
+<li><strong>إنستغرام وتيك توك</strong><span>بيزيدولك متابعين</span></li>
+<li><strong>تقييم على غوغل</strong><span>الزبون بيكتب review بكبسة</span></li>
+<li><strong>المنيو</strong><span>صورة أو PDF بدون طباعة كل مرة</span></li>
+<li><strong>الواي فاي</strong><span>بيتصل بالنت بدون ما يكتب الباسورد</span></li>
+<li><strong>بطاقة اتصال</strong><span>بتحفظ رقمك بتلفون الزبون</span></li>
+</ul>
+</div>
 </section>
 </div>
 
