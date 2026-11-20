@@ -49,6 +49,15 @@ nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between
 .qr-list li{background:#0E0B10;border:1px solid #33293A;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column}
 .qr-list strong{color:#E8B94A;font-size:18px}
 .qr-list span{color:#C9C0D0;font-size:15px}
+.products{flex:1 1 100%;display:flex;flex-direction:column;gap:14px}
+.products h3{margin:0;font-size:24px;font-weight:900}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.prod{background:#0E0B10;border:1px solid #33293A;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.prod strong{font-size:18px}
+.prod span:last-child{color:#C9C0D0;font-size:15px}
+.tag{background:#E8B94A;color:#1A1206;font-weight:800;font-size:13px;padding:2px 10px;border-radius:999px}
+.tag.pink{background:#D6156F;color:#fff}
+.price-s{color:#F2C960;font-size:17px;font-weight:900}
 .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .reason{background:#17121B;border:1px solid #33293A;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px}
 .reason .ico{width:50px;height:50px;border-radius:14px;background:#2A1020;color:#FF8CC0;display:flex;align-items:center;justify-content:center}
@@ -118,7 +127,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <a class="brand" href="#top"><img src="logo-small.jpg" alt="شعار من عنا ديجيتال">من عنا ديجيتال</a>
 <div class="links">
 <a href="#packages">الباقات</a>
-<a href="#qr">QR كود</a>
+<a href="#qr">QR وNFC</a>
 <a href="#demo">جرّب الحجز</a>
 <a href="#how">كيف منشتغل</a>
 <a class="btn btn-gold nav-cta" href="https://wa.me/96170073262">احكينا واتساب</a>
@@ -206,9 +215,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <div class="qr-box">
 <div class="qr-text">
 <span class="pill">خدمة جديدة</span>
-<h2>QR كود لمصلحتك، بموقع أو بلا موقع</h2>
-<p>منعملّك QR كود جاهز للطباعة، بتحطّو عالطاولة، عالواجهة، عالكرت أو عالمنيو. الزبون بيصوّرو بكاميرا التلفون وبيوصل لعندك بثانية.</p>
-<a class="btn btn-gold" href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20QR%20%D9%83%D9%88%D8%AF%20%D9%84%D9%85%D8%B5%D9%84%D8%AD%D8%AA%D9%8A">اطلب QR لمحلك</a>
+<h2>QR كود وNFC لمصلحتك، بموقع أو بلا موقع</h2>
+<p>الزبون بيصوّر الـ QR بكاميرا التلفون، أو بيقرّب تلفونو من ستاند الـ NFC، وبيوصل لعندك بثانية. بدون تطبيق وبدون ما يكتب شي.</p>
+<a class="btn btn-gold" href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20QR%20%D8%A3%D9%88%20NFC%20%D9%84%D9%85%D8%B5%D9%84%D8%AD%D8%AA%D9%8A">اطلب QR أو NFC لمحلك</a>
 </div>
 <ul class="qr-list">
 <li><strong>موقعك</strong><span>بيفتح الموقع، صفحة الحجز أو المنيو</span></li>
@@ -220,6 +229,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <li><strong>الواي فاي</strong><span>بيتصل بالنت بدون ما يكتب الباسورد</span></li>
 <li><strong>بطاقة اتصال</strong><span>بتحفظ رقمك بتلفون الزبون</span></li>
 </ul>
+<div class="products">
+<h3>شو منقدّملك</h3>
+<div class="prod-grid">
+<div class="prod"><span class="tag">QR</span><strong>QR ديجيتال</strong><b class="price-s">اسأل عن السعر</b><span>ملف جاهز للطباعة أو للسوشال ميديا، بألوانك ولوغو محلك بالنص.</span></div>
+<div class="prod"><span class="tag">QR</span><strong>QR ذكي (ديناميكي)</strong><b class="price-s">$5 بالشهر</b><span>بتغيّر الرابط أو المنيو بأي وقت بدون ما تطبع من جديد.</span></div>
+<div class="prod"><span class="tag">QR</span><strong>لوحة أو ستاند QR</strong><b class="price-s">$12 · مع اللوغو $19</b><span>مطبوع مع اسم المحل واللوغو، للطاولة، الكاشير أو الواجهة.</span></div>
+<div class="prod"><span class="tag">QR</span><strong>ستيكر QR</strong><b class="price-s">اسأل عن السعر</b><span>للواجهة، الباب، علب التوصيل والأكياس.</span></div>
+<div class="prod"><span class="tag pink">NFC</span><strong>ستاند NFC + QR للتقييمات</strong><b class="price-s">$10 · أكريليك فخم $25</b><span>الزبون بيقرّب تلفونو وبيفتحلو تقييم Google أو إنستغرام فوراً.</span></div>
+<div class="prod"><span class="tag pink">NFC</span><strong>كرت NFC</strong><b class="price-s">$10</b><span>للكاشير أو للطاولة، بكبسة بيفتح الموقع، الواتساب أو التقييم.</span></div>
+<div class="prod"><span class="tag pink">NFC</span><strong>بطاقة أعمال ذكية NFC</strong><b class="price-s">$20</b><span>بتقرّبها من تلفون الزبون وبتنحفظ معلوماتك عندو.</span></div>
+<div class="prod"><span class="tag pink">NFC</span><strong>ستيكر NFC خلف التلفون</strong><b class="price-s">$10 · بأكتر من رابط $15</b><span>بتشارك صفحاتك ورقمك بلمسة، وفيه أكتر من رابط.</span></div>
+</div>
+</div>
 </div>
 </section>
 </div>
