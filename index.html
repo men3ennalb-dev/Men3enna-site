@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من عنا ديجيتال | تصميم مواقع إلكترونية بلبنان</title>
+<meta name="description" content="من عنا ديجيتال: تصميم مواقع إلكترونية للمصالح بلبنان. موقع تعريفي أو موقع مع نظام حجز أونلاين، بأسعار واضحة.">
+<link rel="icon" href="logo-small.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0E0B10;color:#F4EFF6;font-family:'Cairo',system-ui,sans-serif;line-height:1.7}
+a{color:#F2C960}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header{background:#120E15;border-bottom:1px solid #2A2230;position:sticky;top:0;z-index:10}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#F4EFF6;font-weight:800;font-size:20px}
+.brand img{width:52px;height:52px;border-radius:12px;object-fit:cover}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-weight:600}
+.links a{text-decoration:none;color:#DCD4E2}
+.links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:14px;padding:13px 26px;min-height:50px;font-size:18px;font-family:inherit;cursor:pointer;border:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:#E8B94A;color:#1A1206!important}
+.btn-pink{background:#D6156F;color:#fff!important}
+.btn-outline-pink{border:2px solid #D6156F;color:#FF8CC0!important;background:transparent}
+.btn-outline-gold{border:2px solid #E8B94A;color:#F2C960!important;background:transparent}
+.nav-cta{padding:9px 18px;min-height:44px;font-size:16px;border-radius:999px}
+.pill{display:inline-block;background:#2A1020;color:#FF8CC0;border:1px solid #5A1E3E;padding:5px 16px;border-radius:999px;font-weight:700;font-size:15px}
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:44px;padding:72px 0}
+.hero-text{flex:1 1 460px;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.hero h1{margin:0;font-size:clamp(34px,5vw,56px);line-height:1.3;font-weight:900}
+.hero h1 span{color:#E8B94A}
+.hero p{margin:0;font-size:19px;color:#C9C0D0;max-width:560px}
+.hero-img{flex:1 1 340px;display:flex;justify-content:center}
+.hero-img img{width:100%;max-width:430px;border-radius:28px;border:1px solid #3A2E40}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.why-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#E8B94A;color:#1A1206;font-weight:800;font-size:17px;padding:10px 20px;border-radius:999px;min-height:46px}
+.why-link:hover{background:#F2C960}
+.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.reason{background:#17121B;border:1px solid #33293A;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.reason .ico{width:50px;height:50px;border-radius:14px;background:#2A1020;color:#FF8CC0;display:flex;align-items:center;justify-content:center}
+.reason h3{margin:0;font-size:21px;font-weight:800}
+.reason p{margin:0;color:#C9C0D0;font-size:17px}
+.band{background:#140F18;border-top:1px solid #2A2230;border-bottom:1px solid #2A2230}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;padding:30px 0}
+.tags span{background:#1E1823;border:1px solid #33293A;padding:7px 18px;border-radius:999px;font-weight:600}
+.tags .lbl{background:none;border:none;color:#C9C0D0;font-weight:700}
+section.block{padding:80px 0}
+.head{text-align:center;margin-bottom:40px}
+.head h2{margin:0 0 8px;font-size:clamp(28px,4vw,42px);font-weight:900}
+.head p{margin:0;color:#C9C0D0;font-size:18px}
+.plans{display:flex;flex-wrap:wrap;gap:28px}
+.plan{flex:1 1 340px;background:#17121B;border:1px solid #33293A;border-radius:24px;padding:34px;display:flex;flex-direction:column;gap:20px;position:relative}
+.plan.hot{background:#1C1020;border:2px solid #D6156F}
+.badge{position:absolute;top:-15px;left:26px;background:#D6156F;color:#fff;padding:3px 16px;border-radius:999px;font-weight:800;font-size:15px}
+.plan h3{margin:0;font-size:27px;font-weight:800}
+.plan .sub{margin:0;color:#C9C0D0}
+.price{font-size:44px;font-weight:900;color:#E8B94A;line-height:1.2}
+.plan.hot .price{color:#FF8CC0}
+.price small{display:block;font-size:17px;font-weight:600;color:#C9C0D0}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:18px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{flex:none;margin-top:5px}
+.plan .btn{margin-top:auto}
+.quote{text-align:center;margin-top:28px;color:#C9C0D0;font-size:18px}
+.demo{display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start;padding:80px 0}
+.demo-text{flex:1 1 320px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.demo-text h2{margin:0;font-size:clamp(28px,4vw,40px);font-weight:900;line-height:1.35}
+.demo-text p{margin:0;font-size:18px;color:#C9C0D0}
+.card{flex:1 1 500px;min-width:0;background:#0E0B10;border:1px solid #3A2E40;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:22px}
+.step h3,.step label{display:block;margin:0 0 10px;font-size:19px;font-weight:800;color:#E8B94A}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{font-family:inherit;cursor:pointer;border-radius:12px;padding:10px 16px;min-height:48px;font-size:17px;font-weight:700;background:#17121B;color:#F4EFF6;border:2px solid #3A2E40}
+.opt small{display:block;font-size:14px;font-weight:600;opacity:.85}
+.opt.on{background:#E8B94A;color:#1A1206;border-color:#E8B94A}
+.opt:disabled{background:#120E15;color:#6E6676;border:2px dashed #2E2534;cursor:not-allowed;text-decoration:line-through}
+input[type=text]{width:100%;font-family:inherit;font-size:18px;padding:12px 16px;min-height:52px;border-radius:12px;border:1px solid #4A3C52;background:#17121B;color:#F4EFF6}
+input::placeholder{color:#8E8796}
+#confirm{width:100%;font-size:20px;min-height:56px;background:#3A2E40;color:#C9C0D0}
+#confirm.ready{background:#D6156F;color:#fff}
+#hint{margin:0;color:#FF8CC0;font-weight:600;display:none}
+#done{display:none;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:20px 0}
+#done h3{margin:0;font-size:30px;font-weight:900}
+#done p{margin:0;color:#C9C0D0;font-size:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.stepcard{background:#17121B;border:1px solid #33293A;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.num{width:50px;height:50px;border-radius:14px;background:#E8B94A;color:#1A1206;font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center}
+.stepcard h3{margin:0;font-size:22px}
+.stepcard p{margin:0;color:#C9C0D0}
+.cta{background:#1C1020;border:2px solid #D6156F;border-radius:28px;padding:44px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:80px}
+.cta h2{margin:0;font-size:clamp(28px,4vw,38px);font-weight:900}
+.cta p{margin:0;color:#C9C0D0;font-size:18px}
+footer{background:#120E15;border-top:1px solid #2A2230;color:#A79FAE;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:24px 20px}
+.wa-float{position:fixed;bottom:20px;left:20px;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:20}
+@media(max-width:700px){.links a:not(.nav-cta){display:none}.hero{padding:44px 0}section.block,.demo{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap">
+<nav>
+<a class="brand" href="#top"><img src="logo-small.jpg" alt="شعار من عنا ديجيتال">من عنا ديجيتال</a>
+<div class="links">
+<a href="#packages">الباقات</a>
+<a href="#demo">جرّب الحجز</a>
+<a href="#how">كيف منشتغل</a>
+<a class="btn btn-gold nav-cta" href="https://wa.me/96170073262">احكينا واتساب</a>
+</div>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<div class="wrap">
+<section class="hero">
+<div class="hero-text">
+<a class="why-link" href="#why">ليش لازم يكون عندك موقع أونلاين؟ <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+<span class="pill">تصميم مواقع ومتاجر إلكترونية بلبنان</span>
+<h1>مصلحتك بتستاهل موقع<br><span>من عنا… ولإلكن</span></h1>
+<p>منعملك موقع حلو وسريع بيشتغل عالموبايل، يعرّف الناس عليك ويخلّي الزباين يوصلولك بسهولة. وإذا بدك، منزيدلك نظام حجز أونلاين لزباينك يحجزوا موعدهن لحالهن.</p>
+<div class="row">
+<a class="btn btn-gold" href="#packages">شوف الباقات</a>
+<a class="btn btn-outline-pink" href="#demo">جرّب ديمو الحجز</a>
+</div>
+</div>
+<div class="hero-img"><img src="logo.jpg" alt="من عنا ديجيتال - تصميم المواقع والمتاجر الإلكترونية"></div>
+</section>
+</div>
+
+<div class="band">
+<div class="wrap tags">
+<span class="lbl">مناسب لـ:</span>
+<span>مطاعم وسناك</span><span>صالونات وحلاقين</span><span>عيادات</span><span>نوادي رياضية</span><span>محلات ألبسة</span><span>شركات وخدمات</span>
+</div>
+</div>
+
+<div class="wrap">
+<section class="block" id="why">
+<div class="head">
+<h2>ليش لازم يكون عندك موقع أونلاين؟</h2>
+<p>الزبون اليوم بيفتّش عالتلفون قبل ما ييجي لعندك</p>
+</div>
+<div class="reasons">
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><h3>الناس بيلاقوك على غوغل</h3><p>لما حدا يفتّش على خدمتك بمنطقتك، موقعك بيساعدك تطلع قدامو بدل منافسك.</p></div>
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>بتبيّن محترف وموثوق</h3><p>الزبون بيرتاح أكتر لمصلحة إلها موقع واضح فيه صورها وخدماتها وأسعارها.</p></div>
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>شغّال ٢٤ ساعة</h3><p>حتى وإنت مسكّر، الزبون فيه يشوف شغلك ويحجز موعد أو يبعتلك رسالة.</p></div>
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h3>كل معلوماتك بمحل واحد</h3><p>الخدمات، الأسعار، المنيو، الموقع عالخريطة والدوام. ما عاد في أسئلة ورسايل عالفاضي.</p></div>
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></span><h3>إلك، مش للسوشال ميديا</h3><p>الصفحات عالسوشال ممكن تنسكّر أو توصل لعدد قليل. موقعك ملكك ودايم.</p></div>
+<div class="reason"><span class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h3>زباين أكتر، شغل أكتر</h3><p>زر واتساب، اتصال مباشر، وحجز أونلاين. كل شي بيسهّل عالزبون يوصلك.</p></div>
+</div>
+</section>
+
+<section class="block" id="packages" style="padding-top:0">
+<div class="head">
+<h2>اختار الباقة يلي بتناسبك</h2>
+<p>أسعار واضحة، بدون حجز أو مع نظام حجز كامل</p>
+</div>
+<div class="plans">
+<article class="plan">
+<div><h3>موقع تعريفي</h3><p class="sub">بدون حجز، للمصالح يلي بدها تنعرف وتنوصل</p></div>
+<div class="price">$200<small>+ $100 بالسنة</small></div>
+<ul>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>صفحة رئيسية، من نحن، وخدماتك</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>معرض صور لشغلك أو المنيو</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>زر واتساب واتصال مباشر</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>موقعك على الخريطة</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>تصميم بيشتغل عالموبايل والكمبيوتر</li>
+</ul>
+<a class="btn btn-outline-gold" href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A">بدي موقع تعريفي</a>
+</article>
+<article class="plan hot">
+<span class="badge">الأكثر طلباً</span>
+<div><h3>موقع مع نظام حجز</h3><p class="sub">لزباينك يحجزوا موعدهن أونلاين، ٢٤ ساعة</p></div>
+<div class="price">$300<small>+ $150 بالسنة</small></div>
+<ul>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8CC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>كل شي بالموقع التعريفي</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8CC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>حجز مواعيد أونلاين: الخدمة، النهار، والساعة</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8CC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>بيوصلك خبر بكل حجز جديد</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8CC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>لوحة تحكم تشوف فيها كل الحجوزات</li>
+<li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8CC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>بتسكّر الأوقات يلي مش فاضي فيها</li>
+</ul>
+<a class="btn btn-pink" href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%B9%20%D8%AD%D8%AC%D8%B2">بدي موقع مع حجز</a>
+</article>
+</div>
+<p class="quote">بدك موقع شركة أكبر أو متجر أونلاين؟ <a href="https://wa.me/96170073262?text=%D8%A8%D8%AF%D9%8A%20%D8%B3%D8%B9%D8%B1">اطلب عرض سعر</a></p>
+</section>
+</div>
+
+<div class="band" id="demo">
+<div class="wrap demo">
+<div class="demo-text">
+<span class="pill">ديمو تجريبي</span>
+<h2>جرّب بإيدك كيف زبونك رح يحجز</h2>
+<p>هيدا مثال لصالون. اختار الخدمة والنهار والساعة، واكتب اسمك، واكبس "أكّد الحجز". هيك بالضبط رح يكون الحجز على موقعك، بس بخدماتك وأوقاتك إنت.</p>
+</div>
+<div class="card">
+<div id="form" style="display:flex;flex-direction:column;gap:22px">
+<div class="step"><h3>١. اختار الخدمة</h3><div class="grid2" id="services"></div></div>
+<div class="step"><h3>٢. اختار النهار</h3><div class="opts" id="days"></div></div>
+<div class="step"><h3>٣. اختار الساعة</h3><div class="opts" id="times"></div></div>
+<div class="step"><label for="bk-name">٤. اسمك</label><input id="bk-name" type="text" placeholder="مثلاً: علي" autocomplete="name"></div>
+<button type="button" class="btn" id="confirm">أكّد الحجز</button>
+<p id="hint">كمّل كل الخيارات واكتب اسمك قبل ما تأكّد.</p>
+</div>
+<div id="done">
+<svg aria-hidden="true" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#E8B94A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+<h3 id="done-title"></h3>
+<p id="done-summary"></p>
+<p style="font-size:16px;color:#A79FAE">بالموقع الحقيقي، صاحب المحل بيوصلو خبر بالحجز فوراً.</p>
+<button type="button" class="btn btn-outline-gold" id="again">جرّب مرة تانية</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<section class="block" id="how">
+<div class="head"><h2>كيف منشتغل</h2><p>كل الشغل أونلاين، وبتابع معنا خطوة بخطوة</p></div>
+<div class="steps">
+<div class="stepcard"><span class="num">١</span><h3>منحكي سوا</h3><p>بتخبرنا عن مصلحتك وشو بدك، وبتختار الباقة.</p></div>
+<div class="stepcard"><span class="num">٢</span><h3>منصمّم موقعك</h3><p>منبعتلك نسخة تشوفها، ومنعدّل لحتى تعجبك.</p></div>
+<div class="stepcard"><span class="num">٣</span><h3>منطلّقو</h3><p>موقعك بيصير أونلاين وزباينك بيقدروا يوصلولك.</p></div>
+</div>
+</section>
+
+<section class="cta">
+<h2>جاهز يكون إلك موقع؟</h2>
+<p>احكينا هلّق ومنساعدك تختار الباقة الصح</p>
+<a class="btn btn-gold" style="font-size:22px" href="https://wa.me/96170073262"><span dir="ltr">70 073 262</span> · واتساب</a>
+</section>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<span>© من عنا ديجيتال · Men3enna Digital</span>
+<span>تصميم المواقع والمتاجر الإلكترونية · لبنان</span>
+</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/96170073262" aria-label="احكينا عالواتساب">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.3-18.1C18.1 1.5 15.1.2 12 .2 5.5.2.2 5.5.2 12c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.6c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3z"/></svg>
+</a>
+
+<script>
+(function(){
+  var services=[{id:'cut',name:'قص شعر',mins:'٣٠ دقيقة'},{id:'beard',name:'حلاقة دقن',mins:'٢٠ دقيقة'},{id:'color',name:'صبغة',mins:'٩٠ دقيقة'},{id:'care',name:'عناية بالبشرة',mins:'٤٥ دقيقة'}];
+  var days=['السبت','الأحد','الاثنين','الثلاثاء','الأربعاء'];
+  var times=['١٠:٠٠','١١:٠٠','١٢:٣٠','٢:٠٠','٣:٣٠','٥:٠٠'];
+  var taken=['١٢:٣٠','٣:٣٠'];
+  var st={service:null,day:null,time:null};
+  var $=function(id){return document.getElementById(id)};
+  var nameIn=$('bk-name');
+  function btn(label,sub,on,dis,fn){
+    var b=document.createElement('button');b.type='button';b.className='opt'+(on?' on':'');
+    b.textContent=label;
+    if(sub){var s=document.createElement('small');s.textContent=sub;b.appendChild(s)}
+    if(dis)b.disabled=true;
+    b.addEventListener('click',fn);return b;
+  }
+  function ready(){return st.service&&st.day&&st.time&&nameIn.value.trim().length>0}
+  function render(){
+    var sv=$('services');sv.innerHTML='';
+    services.forEach(function(s){sv.appendChild(btn(s.name,s.mins,st.service===s.id,false,function(){st.service=s.id;render()}))});
+    var dv=$('days');dv.innerHTML='';
+    days.forEach(function(d){dv.appendChild(btn(d,null,st.day===d,false,function(){st.day=d;st.time=null;render()}))});
+    var tv=$('times');tv.innerHTML='';
+    times.forEach(function(t){var tk=st.day!==null&&taken.indexOf(t)>-1;tv.appendChild(btn(t,null,st.time===t,tk,function(){st.time=t;render()}))});
+    $('confirm').className='btn'+(ready()?' ready':'');
+    if(ready())$('hint').style.display='none';
+  }
+  nameIn.addEventListener('input',render);
+  $('confirm').addEventListener('click',function(){
+    if(!ready()){$('hint').style.display='block';return}
+    var s=services.filter(function(x){return x.id===st.service})[0];
+    $('done-title').textContent='تم الحجز يا '+nameIn.value.trim()+'!';
+    $('done-summary').textContent=s.name+' · نهار '+st.day+' · الساعة '+st.time;
+    $('form').style.display='none';$('done').style.display='flex';
+  });
+  $('again').addEventListener('click',function(){
+    st={service:null,day:null,time:null};nameIn.value='';
+    $('done').style.display='none';$('form').style.display='flex';$('hint').style.display='none';render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
