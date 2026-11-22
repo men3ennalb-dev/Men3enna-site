@@ -121,7 +121,19 @@ details p{margin:8px 0 0;color:var(--mute);max-width:60em}
 .df input{font:16px "IBM Plex Sans Arabic",sans-serif;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);min-height:44px;width:100%}
 .tot{display:flex;justify-content:space-between;font-weight:700}
 .note{font-size:13px;color:var(--mute);margin:0}
-@media(prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
+/* glowing buttons, logo colours: gold, pink, WhatsApp green */
+:root{--gold:#ffc83d;--pink:#ff5fa2;--wa:#25d366}
+.btn-red,.cta .btn-wa,.ctas .btn-ghost{transition:transform .2s,box-shadow .2s}
+.ctas .btn-red,.cartbtn{background:var(--gold);color:#2a1a00;--g:var(--gold);animation:breathe 2.6s ease-in-out infinite}
+.card .add{background:var(--pink);color:#fff;--g:var(--pink);animation:breathe 2.6s ease-in-out infinite}
+.btn-wa,.ctas .btn-ghost{background:var(--wa);color:#04361a;border:0;--g:var(--wa);animation:breathe 2.6s ease-in-out infinite}
+.tab[aria-selected=true]{background:var(--gold);border-color:var(--gold);color:#2a1a00;box-shadow:0 0 16px var(--gold)}
+.box{--g:#ffffff;animation:breathe 3.2s ease-in-out infinite}
+.b-web{--g:var(--pink)}.b-social{--g:var(--gold)}.b-qr{--g:var(--wa)}
+.ctas .btn-red:hover,.cartbtn:hover,.card .add:hover,.btn-wa:hover,.ctas .btn-ghost:hover{transform:translateY(-3px);box-shadow:0 0 10px var(--g),0 0 34px var(--g)}
+.count{background:#2a0d12}
+@keyframes breathe{0%,100%{box-shadow:0 0 4px var(--g),0 0 10px color-mix(in srgb,var(--g) 50%,transparent)}50%{box-shadow:0 0 10px var(--g),0 0 28px var(--g)}}
+@media(prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}.ctas .btn-red,.cartbtn,.card .add,.btn-wa,.ctas .btn-ghost,.box{animation:none;box-shadow:0 0 14px var(--g)}}
 </style>
 </head>
 <body>
