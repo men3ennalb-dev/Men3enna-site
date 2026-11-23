@@ -89,6 +89,7 @@ button:focus-visible,.btn:focus-visible,input:focus-visible,.tab:focus-visible{o
 .box:focus-visible{outline:3px solid var(--cedar);outline-offset:3px}
 .box svg{width:92px;height:92px;background:#ffffff;border-radius:18px;padding:6px}
 .box .face{display:block;width:100%;max-width:300px;height:auto;aspect-ratio:500/580;object-fit:cover;border-radius:42px;margin:0 auto 4px}
+.box .face.wide{aspect-ratio:432/324;max-width:380px;border-radius:18px}
 .box h3{font-size:24px;margin:6px 0 0;font-family:Alexandria,sans-serif}
 .box p{margin:0;color:#ffffffd9;font-size:15px}
 .box .go{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-weight:600}
@@ -271,7 +272,7 @@ const ic={
 };
 const cats=[['web','مواقع ومتاجر'],['social','سوشال ميديا'],['qr','QR وNFC']];
 const boxInfo={
- web:{i:'web',img:'img/pkg-bundle.jpg',d:'موقع تعريفي، موقع مع حجز، موقع شركة أو متجر أونلاين.',from:'بيبلّش من $200'},
+ web:{i:'web',img:'img/web-box.jpg',wide:1,d:'موقع تعريفي، موقع مع حجز، موقع شركة أو متجر أونلاين.',from:'بيبلّش من $200'},
  social:{i:'social',img:'img/pkg-smm.jpg',d:'إدارة إنستغرام وفيسبوك وتيك توك، أو باقة شهرية مع موقع.',from:'السعر عالطلب'},
  qr:{i:'nfc',d:'ستاندات، كروت وستيكرات بتفتح رابطك بمسحة أو بلمسة.',from:'بيبلّش من $5'}
 };
@@ -298,7 +299,7 @@ let cat=null;let cart=[];
 try{cart=JSON.parse(localStorage.getItem('m3cart')||'[]')}catch(e){cart=[]}
 const save=()=>{try{localStorage.setItem('m3cart',JSON.stringify(cart))}catch(e){}};
 function tabs(){$('#tabs').innerHTML=cats.map(([k,l])=>`<button class="tab" role="tab" data-k="${k}" aria-selected="${k===cat}">${l}</button>`).join('')}
-function boxes(){$('#boxes').innerHTML=cats.map(([k,l])=>{const b=boxInfo[k],n=P.filter(p=>p.c===k).length;return `<a class="box b-${k}" href="#${k}">${b.img?`<img class="face" src="${b.img}" alt="" width="500" height="580">`:`<svg viewBox="0 0 86 86" aria-hidden="true">${ic[b.i]}</svg>`}<h3>${l}</h3><p>${b.d}</p><div class="go"><span>${n} منتجات · ${b.from}</span><b>فوت ←</b></div></a>`}).join('')}
+function boxes(){$('#boxes').innerHTML=cats.map(([k,l])=>{const b=boxInfo[k],n=P.filter(p=>p.c===k).length;return `<a class="box b-${k}" href="#${k}">${b.img?`<img class="face${b.wide?' wide':''}" src="${b.img}" alt="" width="${b.wide?432:500}" height="${b.wide?324:580}">`:`<svg viewBox="0 0 86 86" aria-hidden="true">${ic[b.i]}</svg>`}<h3>${l}</h3><p>${b.d}</p><div class="go"><span>${n} منتجات · ${b.from}</span><b>فوت ←</b></div></a>`}).join('')}
 function route(){
  const h=location.hash.slice(1);const ok=cats.some(c=>c[0]===h);
  if(!ok&&cat===null&&h!=='store'){ $('#catsView').hidden=false;$('#prodView').hidden=true;return}
