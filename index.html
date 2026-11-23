@@ -56,6 +56,7 @@ button:focus-visible,.btn:focus-visible,input:focus-visible,.tab:focus-visible{o
 .ctas{display:flex;flex-wrap:wrap;gap:10px}
 .shop{width:100%;height:auto;display:block;max-height:420px}
 @media(max-width:820px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.shop{max-height:300px}}
+.shop-img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto;border-radius:28px;box-shadow:0 12px 34px #5a0f2433}
 
 /* store */
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;margin-bottom:8px}
@@ -163,36 +164,7 @@ details p{margin:8px 0 0;color:var(--mute);max-width:60em}
       <li>مطاعم</li><li>صالونات</li><li>حلاقين</li><li>عيادات</li><li>نوادي رياضة</li><li>محلات تياب</li><li>شركات وخدمات</li>
     </ul>
   </div>
-  <svg class="shop" viewBox="0 0 520 420" role="img" aria-label="رسمة دكانة فيها موقع على الشاشة وستاند QR وكرت NFC">
-    <defs>
-      <pattern id="stripe" width="52" height="10" patternUnits="userSpaceOnUse"><rect width="26" height="10" fill="#d7192d"/><rect x="26" width="26" height="10" fill="#fff"/></pattern>
-      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f3e3e4"/></linearGradient>
-      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0d12"/><stop offset="1" stop-color="#4a1a22"/></linearGradient>
-    </defs>
-    <ellipse cx="260" cy="398" rx="230" ry="14" fill="#2a0d12" opacity=".12"/>
-    <rect x="40" y="90" width="440" height="305" rx="10" fill="url(#wall)" stroke="#ecdfe0"/>
-    <rect x="30" y="40" width="460" height="34" rx="8" fill="#2a0d12"/>
-    <text x="260" y="64" text-anchor="middle" fill="#fff" font-family="Alexandria,sans-serif" font-weight="800" font-size="19">من عنا ديجيتال</text>
-    <path d="M22 74h476l-16 46H38z" fill="url(#stripe)"/>
-    <path d="M38 120h444" stroke="#a90f20" stroke-width="3"/>
-    <g fill="#d7192d"><circle cx="64" cy="122" r="12"/><circle cx="116" cy="122" r="12" fill="#fff"/><circle cx="168" cy="122" r="12"/><circle cx="220" cy="122" r="12" fill="#fff"/><circle cx="272" cy="122" r="12"/><circle cx="324" cy="122" r="12" fill="#fff"/><circle cx="376" cy="122" r="12"/><circle cx="428" cy="122" r="12" fill="#fff"/></g>
-    <rect x="70" y="160" width="250" height="170" rx="12" fill="url(#glass)"/>
-    <rect x="84" y="174" width="222" height="130" rx="6" fill="#fff"/>
-    <rect x="84" y="174" width="222" height="22" rx="6" fill="#d7192d"/>
-    <rect x="98" y="210" width="120" height="12" rx="6" fill="#2a0d12"/>
-    <rect x="98" y="230" width="160" height="8" rx="4" fill="#d9c9cb"/>
-    <rect x="98" y="244" width="140" height="8" rx="4" fill="#d9c9cb"/>
-    <rect x="98" y="266" width="76" height="24" rx="8" fill="#007a3d"/>
-    <rect x="184" y="266" width="76" height="24" rx="8" fill="none" stroke="#d7192d" stroke-width="2"/>
-    <rect x="175" y="330" width="40" height="18" fill="#2a0d12"/><rect x="150" y="346" width="90" height="8" rx="4" fill="#2a0d12"/>
-    <rect x="340" y="250" width="120" height="10" rx="3" fill="#a90f20"/>
-    <rect x="345" y="260" width="110" height="88" rx="4" fill="#f3e3e4"/>
-    <path d="M360 248l20-70h40l20 70z" fill="#2a0d12"/>
-    <rect x="378" y="190" width="44" height="44" fill="#fff"/>
-    <g fill="#2a0d12"><rect x="382" y="194" width="12" height="12"/><rect x="406" y="194" width="12" height="12"/><rect x="382" y="218" width="12" height="12"/><rect x="398" y="210" width="6" height="6"/><rect x="408" y="222" width="8" height="8"/></g>
-    <g transform="rotate(-12 395 300)"><rect x="358" y="282" width="78" height="48" rx="7" fill="#d7192d"/><path d="M380 300q8 6 0 12M388 296q12 10 0 20M396 292q16 14 0 28" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></g>
-    <path d="M440 168c-14 22-14 40 0 54 14-14 14-32 0-54z" fill="#007a3d"/><rect x="438" y="214" width="4" height="34" fill="#2a0d12"/>
-  </svg>
+  <img class="shop-img" src="img/hero.jpg" alt="من عنا ديجيتال: منصّتك الرقمية لكل ما تحتاجه لتطوير وتسويق عملك. مواقع، ستاند QR وكرت NFC، لعيادات وحلاقين ومطاعم وصالونات ومحلات تياب ونوادي رياضة وشركات" width="900" height="900">
 </div></section>
 
 <section class="band" id="store"><div class="wrap">
