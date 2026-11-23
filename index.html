@@ -66,7 +66,8 @@ button:focus-visible,.btn:focus-visible,input:focus-visible,.tab:focus-visible{o
 .card .thumb{height:120px;border-radius:12px;background:var(--soft);display:grid;place-items:center}
 .card .thumb svg{width:86px;height:86px}
 .card .thumb.pic{height:auto;background:none}
-.card .thumb.pic img{display:block;width:100%;max-width:280px;height:auto;aspect-ratio:500/580;object-fit:cover;border-radius:42px;margin:0 auto}
+.card .thumb.pic img{display:block;width:100%;max-width:300px;height:auto;border-radius:18px;margin:0 auto}
+.card .thumb.pic img.tall{max-width:280px;border-radius:42px}
 .card p{margin:0;color:var(--mute);font-size:15px}
 .card ul{margin:0;padding-inline-start:18px;color:var(--mute);font-size:14px}
 .tag{position:absolute;top:12px;inset-inline-start:12px;background:var(--cedar);color:#fff;font-size:13px;font-weight:600;border-radius:99px;padding:2px 10px}
@@ -88,8 +89,8 @@ button:focus-visible,.btn:focus-visible,input:focus-visible,.tab:focus-visible{o
 .box:hover{transform:translateY(-4px)}
 .box:focus-visible{outline:3px solid var(--cedar);outline-offset:3px}
 .box svg{width:92px;height:92px;background:#ffffff;border-radius:18px;padding:6px}
-.box .face{display:block;width:100%;max-width:300px;height:auto;aspect-ratio:500/580;object-fit:cover;border-radius:42px;margin:0 auto 4px}
-.box .face.wide{aspect-ratio:432/324;max-width:380px;border-radius:18px}
+.box .face{display:block;width:100%;max-width:320px;height:auto;border-radius:18px;margin:0 auto 4px}
+.box .face.tall{max-width:300px;border-radius:42px}
 .box h3{font-size:24px;margin:6px 0 0;font-family:Alexandria,sans-serif}
 .box p{margin:0;color:#ffffffd9;font-size:15px}
 .box .go{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-weight:600}
@@ -272,15 +273,15 @@ const ic={
 };
 const cats=[['web','مواقع ومتاجر'],['social','سوشال ميديا'],['qr','QR وNFC']];
 const boxInfo={
- web:{i:'web',img:'img/web-box.jpg',d:'موقع تعريفي، موقع مع حجز، موقع شركة أو متجر أونلاين.',from:'بيبلّش من $200'},
- social:{i:'social',img:'img/pkg-smm.jpg',d:'إدارة إنستغرام وفيسبوك وتيك توك، أو باقة شهرية مع موقع.',from:'السعر عالطلب'},
- qr:{i:'nfc',d:'ستاندات، كروت وستيكرات بتفتح رابطك بمسحة أو بلمسة.',from:'بيبلّش من $5'}
+ web:{i:'web',img:'img/cat-web.jpg',d:'موقع تعريفي، موقع مع حجز، موقع شركة أو متجر أونلاين.',from:'بيبلّش من $200'},
+ social:{i:'social',img:'img/cat-social.jpg',d:'إدارة إنستغرام وفيسبوك وتيك توك، أو باقة شهرية مع موقع.',from:'السعر عالطلب'},
+ qr:{i:'nfc',img:'img/cat-qr.jpg',d:'ستاندات، كروت وستيكرات بتفتح رابطك بمسحة أو بلمسة.',from:'بيبلّش من $5'}
 };
 const P=[
- {id:'landing',c:'web',i:'web',n:'موقع تعريفي',d:'صفحة احترافية لمصلحتك بتشتغل منيح عالتلفون.',f:['رئيسية، مين نحنا، والخدمات','معرض صور أو منيو','أزرار واتساب واتصال وخريطة'],v:[{l:'الموقع',p:200,y:100}]},
+ {id:'landing',c:'web',i:'web',img:'img/landing.jpg',n:'موقع تعريفي',d:'صفحة احترافية لمصلحتك بتشتغل منيح عالتلفون.',f:['رئيسية، مين نحنا، والخدمات','معرض صور أو منيو','أزرار واتساب واتصال وخريطة'],v:[{l:'الموقع',p:200,y:100}]},
  {id:'booking',c:'web',i:'book',n:'موقع مع حجز أونلاين',tag:'الأكثر طلباً',d:'كل شي بالموقع التعريفي، وزبونك بيحجز موعدو لحالو.',f:['حجز أونلاين للمواعيد','تنبيه بكل حجز جديد','لوحة تحكم وسكّر الأوقات المش متاحة'],v:[{l:'الموقع',p:300,y:150}]},
  {id:'biz',c:'web',i:'biz',n:'موقع شركة',d:'موقع أكبر بصفحات أكتر وأقسام حسب شغل شركتك.',v:[{l:'',p:null}]},
- {id:'shop',c:'web',i:'store',n:'متجر أونلاين',d:'بيع منتجاتك أونلاين مع صفحات منتجات وسلة وطلبات.',v:[{l:'',p:null}]},
+ {id:'shop',c:'web',i:'store',img:'img/shop.jpg',n:'متجر أونلاين',d:'بيع منتجاتك أونلاين مع صفحات منتجات وسلة وطلبات.',v:[{l:'',p:null}]},
  {id:'bundle',c:'social',i:'social',img:'img/pkg-bundle.jpg',n:'باقة شهرية: موقع + سوشال ميديا',tag:'باقة',d:'اشتراك شهري بيجمع موقعك مع إدارة صفحاتك.',f:['إنستغرام، فيسبوك وتيك توك','إنت بتصوّر ونحنا منعدّل ومننزّل','منقدر ننزّل بلا ما ناخد كلمة سر حساباتك'],v:[{l:'',p:null}]},
  {id:'smm',c:'social',i:'social',img:'img/pkg-smm.jpg',n:'إدارة سوشال ميديا',d:'منهتم بصفحاتك عإنستغرام وفيسبوك وتيك توك كل شهر.',v:[{l:'',p:null}]},
  {id:'film',c:'social',i:'cam',img:'img/pkg-film.jpg',n:'تصوير بالمحل (إضافة)',d:'إذا بدك، منجي لعندك ومنصوّر صور وفيديوهات للسوشال ميديا.',v:[{l:'',p:null}]},
@@ -299,7 +300,7 @@ let cat=null;let cart=[];
 try{cart=JSON.parse(localStorage.getItem('m3cart')||'[]')}catch(e){cart=[]}
 const save=()=>{try{localStorage.setItem('m3cart',JSON.stringify(cart))}catch(e){}};
 function tabs(){$('#tabs').innerHTML=cats.map(([k,l])=>`<button class="tab" role="tab" data-k="${k}" aria-selected="${k===cat}">${l}</button>`).join('')}
-function boxes(){$('#boxes').innerHTML=cats.map(([k,l])=>{const b=boxInfo[k],n=P.filter(p=>p.c===k).length;return `<a class="box b-${k}" href="#${k}">${b.img?`<img class="face${b.wide?' wide':''}" src="${b.img}" alt="" width="${b.wide?432:500}" height="${b.wide?324:580}">`:`<svg viewBox="0 0 86 86" aria-hidden="true">${ic[b.i]}</svg>`}<h3>${l}</h3><p>${b.d}</p><div class="go"><span>${n} منتجات · ${b.from}</span><b>فوت ←</b></div></a>`}).join('')}
+function boxes(){$('#boxes').innerHTML=cats.map(([k,l])=>{const b=boxInfo[k],n=P.filter(p=>p.c===k).length;return `<a class="box b-${k}" href="#${k}">${b.img?`<img class="face" src="${b.img}" alt="" width="702" height="696">`:`<svg viewBox="0 0 86 86" aria-hidden="true">${ic[b.i]}</svg>`}<h3>${l}</h3><p>${b.d}</p><div class="go"><span>${n} منتجات · ${b.from}</span><b>فوت ←</b></div></a>`}).join('')}
 function route(){
  const h=location.hash.slice(1);const ok=cats.some(c=>c[0]===h);
  if(!ok&&cat===null&&h!=='store'){ $('#catsView').hidden=false;$('#prodView').hidden=true;return}
@@ -312,7 +313,7 @@ function grid(){
  $('#grid').innerHTML=P.filter(p=>p.c===cat).map(p=>`
  <article class="card" data-id="${p.id}">
   ${p.tag?`<span class="tag">${p.tag}</span>`:''}
-  ${p.img?`<div class="thumb pic"><img src="${p.img}" alt="" width="500" height="580" loading="lazy"></div>`:`<div class="thumb"><svg viewBox="0 0 86 86" aria-hidden="true">${ic[p.i]}</svg></div>`}
+  ${p.img?`<div class="thumb pic">${/pkg-/.test(p.img)?`<img class="tall" src="${p.img}" alt="" width="500" height="580" loading="lazy">`:`<img src="${p.img}" alt="" width="800" height="800" loading="lazy">`}</div>`:`<div class="thumb"><svg viewBox="0 0 86 86" aria-hidden="true">${ic[p.i]}</svg></div>`}
   <h3>${p.n}</h3><p>${p.d}</p>
   ${p.f?`<ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
   ${p.v.length>1?`<div class="opts" role="radiogroup" aria-label="اختار النوع">${p.v.map((v,i)=>`<label><input type="radio" name="o-${p.id}" value="${i}" ${i?'':'checked'}><span>${v.l}</span><b>$${v.p}</b></label>`).join('')}</div>`:`<div class="price">${money(p.v[0])}</div>`}
