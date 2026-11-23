@@ -65,6 +65,8 @@ button:focus-visible,.btn:focus-visible,input:focus-visible,.tab:focus-visible{o
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px;position:relative}
 .card .thumb{height:120px;border-radius:12px;background:var(--soft);display:grid;place-items:center}
 .card .thumb svg{width:86px;height:86px}
+.card .thumb.pic{height:auto;background:none}
+.card .thumb.pic img{display:block;width:100%;max-width:280px;height:auto;aspect-ratio:500/580;object-fit:cover;border-radius:18px;margin:0 auto}
 .card p{margin:0;color:var(--mute);font-size:15px}
 .card ul{margin:0;padding-inline-start:18px;color:var(--mute);font-size:14px}
 .tag{position:absolute;top:12px;inset-inline-start:12px;background:var(--cedar);color:#fff;font-size:13px;font-weight:600;border-radius:99px;padding:2px 10px}
@@ -277,9 +279,9 @@ const P=[
  {id:'booking',c:'web',i:'book',n:'موقع مع حجز أونلاين',tag:'الأكثر طلباً',d:'كل شي بالموقع التعريفي، وزبونك بيحجز موعدو لحالو.',f:['حجز أونلاين للمواعيد','تنبيه بكل حجز جديد','لوحة تحكم وسكّر الأوقات المش متاحة'],v:[{l:'الموقع',p:300,y:150}]},
  {id:'biz',c:'web',i:'biz',n:'موقع شركة',d:'موقع أكبر بصفحات أكتر وأقسام حسب شغل شركتك.',v:[{l:'',p:null}]},
  {id:'shop',c:'web',i:'store',n:'متجر أونلاين',d:'بيع منتجاتك أونلاين مع صفحات منتجات وسلة وطلبات.',v:[{l:'',p:null}]},
- {id:'bundle',c:'social',i:'social',n:'باقة شهرية: موقع + سوشال ميديا',tag:'باقة',d:'اشتراك شهري بيجمع موقعك مع إدارة صفحاتك.',f:['إنستغرام، فيسبوك وتيك توك','إنت بتصوّر ونحنا منعدّل ومننزّل','منقدر ننزّل بلا ما ناخد كلمة سر حساباتك'],v:[{l:'',p:null}]},
- {id:'smm',c:'social',i:'social',n:'إدارة سوشال ميديا',d:'منهتم بصفحاتك عإنستغرام وفيسبوك وتيك توك كل شهر.',v:[{l:'',p:null}]},
- {id:'film',c:'social',i:'cam',n:'تصوير بالمحل (إضافة)',d:'إذا بدك، منجي لعندك ومنصوّر صور وفيديوهات للسوشال ميديا.',v:[{l:'',p:null}]},
+ {id:'bundle',c:'social',i:'social',img:'img/pkg-bundle.jpg',n:'باقة شهرية: موقع + سوشال ميديا',tag:'باقة',d:'اشتراك شهري بيجمع موقعك مع إدارة صفحاتك.',f:['إنستغرام، فيسبوك وتيك توك','إنت بتصوّر ونحنا منعدّل ومننزّل','منقدر ننزّل بلا ما ناخد كلمة سر حساباتك'],v:[{l:'',p:null}]},
+ {id:'smm',c:'social',i:'social',img:'img/pkg-smm.jpg',n:'إدارة سوشال ميديا',d:'منهتم بصفحاتك عإنستغرام وفيسبوك وتيك توك كل شهر.',v:[{l:'',p:null}]},
+ {id:'film',c:'social',i:'cam',img:'img/pkg-film.jpg',n:'تصوير بالمحل (إضافة)',d:'إذا بدك، منجي لعندك ومنصوّر صور وفيديوهات للسوشال ميديا.',v:[{l:'',p:null}]},
  {id:'qrfile',c:'qr',i:'qr',n:'QR كود (ملف رقمي)',d:'كود جاهز بتطبعو وين ما بدك، بيفتح أي رابط.',v:[{l:'',p:null}]},
  {id:'qrdyn',c:'qr',i:'qr',n:'QR ديناميكي',d:'بتغيّر الرابط وقت ما بدك بلا ما تطبع كود جديد.',v:[{l:'',p:5,m:1}]},
  {id:'qrstand',c:'qr',i:'stand',n:'ستاند أو لوح QR',d:'للطاولة أو الكاشير، الزبون بيمسح وبيفوت.',v:[{l:'عادي',p:12},{l:'مع لوغو',p:19}]},
@@ -308,7 +310,7 @@ function grid(){
  $('#grid').innerHTML=P.filter(p=>p.c===cat).map(p=>`
  <article class="card" data-id="${p.id}">
   ${p.tag?`<span class="tag">${p.tag}</span>`:''}
-  <div class="thumb"><svg viewBox="0 0 86 86" aria-hidden="true">${ic[p.i]}</svg></div>
+  ${p.img?`<div class="thumb pic"><img src="${p.img}" alt="" width="500" height="580" loading="lazy"></div>`:`<div class="thumb"><svg viewBox="0 0 86 86" aria-hidden="true">${ic[p.i]}</svg></div>`}
   <h3>${p.n}</h3><p>${p.d}</p>
   ${p.f?`<ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
   ${p.v.length>1?`<div class="opts" role="radiogroup" aria-label="اختار النوع">${p.v.map((v,i)=>`<label><input type="radio" name="o-${p.id}" value="${i}" ${i?'':'checked'}><span>${v.l}</span><b>$${v.p}</b></label>`).join('')}</div>`:`<div class="price">${money(p.v[0])}</div>`}
